@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haley Eberly — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav__name">Haley Eberly</a>
+  <div class="site-nav__links">
+    <a href="index.html">Work</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Design Strategist — Brand, Visual Identity, UX/UI</h1>
+  <p>I partner with leadership to shape brand direction and translate strategy into structured, scalable design systems. Four recent case studies below.</p>
+</header>
+
+<main class="work-list">
+
+  <a class="work-item" href="case-study-1.html">
+    <div class="work-item__media">
+      <img src="images/cherrylake-brand-guide-cover.jpg" alt="Cherrylake Brand Guide cover" loading="lazy">
+    </div>
+    <div class="work-item__body">
+      <span class="work-item__index">01 / 04</span>
+      <h2 class="work-item__title">Cherrylake Brand Guide</h2>
+      <div class="work-item__tags">
+        <span class="tag">Brand Strategy</span>
+        <span class="tag">Design Systems</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="work-item" href="case-study-2.html">
+    <div class="work-item__media">
+      <img src="images/weslyn-park-water-dashboard-cover.jpg" alt="Weslyn Park Water Dashboard cover" loading="lazy">
+    </div>
+    <div class="work-item__body">
+      <span class="work-item__index">02 / 04</span>
+      <h2 class="work-item__title">Weslyn Park Water Dashboard</h2>
+      <div class="work-item__tags">
+        <span class="tag">Visual Identity Design</span>
+        <span class="tag">Data Visualization</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="work-item" href="case-study-3.html">
+    <div class="work-item__media">
+      <img src="images/lake-forever-cover.jpg" alt="Lake Forever cover" loading="lazy">
+    </div>
+    <div class="work-item__body">
+      <span class="work-item__index">03 / 04</span>
+      <h2 class="work-item__title">Lake Forever</h2>
+      <div class="work-item__tags">
+        <span class="tag">Logo Design</span>
+        <span class="tag">Front-End Web Design</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="work-item" href="case-study-4.html">
+    <div class="work-item__media">
+      <img src="images/cherrylake-ecomm-dashboards-cover.jpg" alt="Cherrylake E-Comm Dashboards cover" loading="lazy">
+    </div>
+    <div class="work-item__body">
+      <span class="work-item__index">04 / 04</span>
+      <h2 class="work-item__title">Cherrylake E-Comm Dashboards</h2>
+      <div class="work-item__tags">
+        <span class="tag">UX/UI Design</span>
+        <span class="tag">Dashboard Design</span>
+      </div>
+    </div>
+  </a>
+
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Haley Eberly — haleyeberlydesign.com &nbsp;|&nbsp; haleyeberly07@gmail.com &nbsp;|&nbsp; 727.543.9826
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
