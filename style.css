@@ -212,6 +212,7 @@ p { margin: 0 0 1.2em; }
 .work-item__title {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 600;
+  line-height: 1.15;
 }
 
 .work-item__tags {
