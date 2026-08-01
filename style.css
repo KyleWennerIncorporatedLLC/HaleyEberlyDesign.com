@@ -223,8 +223,10 @@ p { margin: 0 0 1.2em; }
 }
 
 .tag {
+  display: inline-block;
   font-family: var(--font-mono);
   font-size: 11px;
+  line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--accent);
