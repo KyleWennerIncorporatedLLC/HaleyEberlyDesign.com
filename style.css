@@ -19,6 +19,7 @@
   --gutter: clamp(20px, 4vw, 48px);
   --prose-width: clamp(1080px, 45vw, 1200px);
   --container: 1040px;
+  --work-container: calc(var(--container) + 500px);
 }
 
 /* =========================================================
@@ -146,6 +147,14 @@ p { margin: 0 0 1.2em; }
 
 }
 
+.hero__tags {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
 /* =========================================================
    Work list (alternating covers)
    ========================================================= */
@@ -159,13 +168,10 @@ p { margin: 0 0 1.2em; }
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: clamp(24px, 4vw, 56px);
-  padding: clamp(32px, 6vw, 64px) max(var(--gutter), calc((100% - var(--container)) / 2));
-  border-top: 1px solid var(--line);
+  padding: clamp(32px, 6vw, 64px) max(var(--gutter), calc((100% - var(--work-container)) / 2));
   text-decoration: none;
   color: inherit;
 }
-
-.work-item:last-child { border-bottom: 1px solid var(--line); }
 
 .work-item:nth-child(even) .work-item__media { order: 2; }
 .work-item:nth-child(even) .work-item__body { order: 1; }
@@ -191,6 +197,12 @@ p { margin: 0 0 1.2em; }
 }
 
 .work-item:hover .work-item__media { transform: scale(1.015); }
+
+.work-item__subtitle {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
 
 .work-item__title {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
@@ -240,6 +252,15 @@ p { margin: 0 0 1.2em; }
   margin: 0 auto;
   padding: clamp(48px, 8vw, 80px) var(--gutter) clamp(64px, 10vw, 120px);
   text-align: center;
+}
+
+.case-study__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
 }
 
 /* Cover image: sits above the title, contained to the page container width */
