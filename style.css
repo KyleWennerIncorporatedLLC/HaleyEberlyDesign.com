@@ -2,8 +2,8 @@
    Design tokens
    ========================================================= */
 :root {
-  --bg: #f3f3f0;
-  --bg-raised: #eaeae5;
+  --bg: #ffffff;
+  --bg-raised: #f3f3f0;
   --ink: #14140f;
   --ink-soft: #55564f;
   --ink-faint: #8b8c83;
@@ -11,13 +11,14 @@
   --accent: #23453d;
   --accent-tint: #e7ece9;
 
-  --font-display: "Bricolage Grotesque", sans-serif;
-  --font-body: "IBM Plex Sans", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-display: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --measure: clamp(760px, 58vw, 1040px);
   --gutter: clamp(20px, 4vw, 48px);
   --prose-width: clamp(1080px, 45vw, 1200px);
+  --container: 1040px;
 }
 
 /* =========================================================
@@ -75,7 +76,7 @@ p { margin: 0 0 1.2em; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px var(--gutter);
+  padding: 22px max(var(--gutter), calc((100% - var(--container)) / 2));
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
@@ -158,7 +159,7 @@ p { margin: 0 0 1.2em; }
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: clamp(24px, 4vw, 56px);
-  padding: clamp(32px, 6vw, 64px) var(--gutter);
+  padding: clamp(32px, 6vw, 64px) max(var(--gutter), calc((100% - var(--container)) / 2));
   border-top: 1px solid var(--line);
   text-decoration: none;
   color: inherit;
@@ -172,7 +173,6 @@ p { margin: 0 0 1.2em; }
 .work-item__media {
   aspect-ratio: 4 / 3;
   background: var(--bg-raised);
-  border: 1px dashed var(--ink-faint);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,14 +191,6 @@ p { margin: 0 0 1.2em; }
 }
 
 .work-item:hover .work-item__media { transform: scale(1.015); }
-
-.work-item__index {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--ink-faint);
-  margin-bottom: 10px;
-  display: block;
-}
 
 .work-item__title {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
@@ -233,7 +225,7 @@ p { margin: 0 0 1.2em; }
    Footer
    ========================================================= */
 .site-footer {
-  padding: 40px var(--gutter) 64px;
+  padding: 40px max(var(--gutter), calc((100% - var(--container)) / 2)) 64px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--ink-faint);
@@ -250,13 +242,24 @@ p { margin: 0 0 1.2em; }
   text-align: center;
 }
 
-.case-study__eyebrow {
+/* Cover image: sits above the title, contained to the page container width */
+.case-study__cover {
+  margin: 0 0 40px;
+}
+
+.case-study__cover .work-item__media {
+  aspect-ratio: 16 / 10;
+  border-left: none;
+  border-right: none;
+  border-radius: 4px;
+}
+
+.case-study__cover figcaption {
+  margin-top: 10px;
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 16px;
+  text-align: center;
 }
 
 .case-study__title {
@@ -343,6 +346,13 @@ p { margin: 0 0 1.2em; }
   margin: 2.2em 0 0.7em;
 }
 
+.case-study__body h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 1.6em 0 0.5em;
+}
+
 .case-study__body ul {
   margin: 0 0 1.2em;
   padding-left: 1.3em;
@@ -358,6 +368,12 @@ p { margin: 0 0 1.2em; }
 }
 
 .case-study__figure {
+  margin: 2.4em 0;
+}
+
+/* Wide/breakout figures: use for hero shots or key images that should
+   span past the text column, out to the edges of the page container. */
+.case-study__figure--wide {
   margin: 2.4em calc(var(--gutter) * -1);
 }
 
