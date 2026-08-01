@@ -147,12 +147,26 @@ p { margin: 0 0 1.2em; }
 
 }
 
+.hero__tags-label {
+  margin-top: 28px;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 .hero__tags {
-  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+}
+
+.hero__tags .tag {
+  background: var(--ink);
+  color: var(--bg);
 }
 
 /* =========================================================
@@ -199,7 +213,7 @@ p { margin: 0 0 1.2em; }
 .work-item:hover .work-item__media { transform: scale(1.015); }
 
 .work-item__subtitle {
-  margin-top: 8px;
+  margin-bottom: 6px;
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
